@@ -5,7 +5,9 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun HomeView(){
-    Scaffold {
+    Scaffold(
+        topBar =
+    ) {
 
     }
 }
