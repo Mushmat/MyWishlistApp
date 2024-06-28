@@ -42,6 +42,9 @@ fun AddEditDetailView(
                 verticalArrangement = Arrangement.Center
                 ) {
                 Spacer(modifier = Modifier.height(10.dp))
+                WishTextField(label = "Title", value = viewModel.wishTitleState, onValueChanged = {viewModel.onWishTitleChanged(it)})
+                Spacer(modifier = Modifier.height(10.dp))
+                WishTextField(label = "Description", value = viewModel.wishDescriptionState, onValueChanged = {viewModel.onWishDescriptionChanged(it)})
 
             }
     }
