@@ -9,9 +9,9 @@ data class Wish(
     //Define the primary key, id is the primary key in our case.
     @PrimaryKey(autoGenerate = true) //This automatically increments the id everytime a new wish is created.
     val id: Long = 0L,
-    @ColumnInfo("wish-title")
+    @ColumnInfo("wish-title") //The name of the column in which title is stored
     val title: String="",
-    @ColumnInfo("wish-desc")
+    @ColumnInfo("wish-desc") //The name of the column in which description is stored
     val description:String=""
 )
 
