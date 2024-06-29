@@ -92,7 +92,7 @@ fun HomeView(
                         Icon(Icons.Default.Delete,"Delete Icon", tint = Color.White)
                     }
                 },
-                directions = setOf(DismissDirection.StartToEnd, DismissDirection.EndToStart),
+                directions = setOf(DismissDirection.EndToStart),
                 dismissThresholds = {FractionalThreshold(0.25f)},
                 dismissContent = {
                     WishItem(wish = wish) {
