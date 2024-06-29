@@ -14,16 +14,16 @@ import kotlinx.coroutines.flow.Flow
 abstract class WishDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE) //The addAWish function will take care of the insertion.
-    abstract fun addAWish(wishEntity: Wish) //IT DOESNT NEED A BODY {}. IT IS AN ABSTRACT FUNCTION.
+    abstract suspend fun addAWish(wishEntity: Wish) //IT DOESNT NEED A BODY {}. IT IS AN ABSTRACT FUNCTION.
 
     @Query("Select * from `wish-table`") //LOADS ALL WISHES FROM THE WISH TABLE
     abstract fun getAllWishes(): Flow<List<Wish>>
 
     @Update
-    abstract fun updateAWish(wishEntity: Wish)
+    abstract suspend fun updateAWish(wishEntity: Wish)
 
     @Delete
-    abstract fun deleteAWish(wishEntity: Wish)
+    abstract suspend fun deleteAWish(wishEntity: Wish)
 
     @Query("Select * from `wish-table` where id =:id") //Get the wish of that specific id
     abstract fun getAWishById(id:Long): Flow<Wish>
