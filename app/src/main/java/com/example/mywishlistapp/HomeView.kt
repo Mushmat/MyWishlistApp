@@ -41,7 +41,7 @@ fun HomeView(
                 contentColor = Color.White,
                 backgroundColor = Color.Black,
                 onClick = {Toast.makeText(context,"FAButton Clicked",Toast.LENGTH_LONG).show()
-                    navController.navigate(Screen.AddScreen.route)
+                    navController.navigate(Screen.AddScreen.route + "/0L")
                 }) {
                     Icon(imageVector = Icons.Default.Add, contentDescription = null)
             }
