@@ -1,5 +1,6 @@
 package com.example.mywishlistapp.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,7 +9,9 @@ data class Wish(
     //Define the primary key, id is the primary key in our case.
     @PrimaryKey(autoGenerate = true) //This automatically increments the id everytime a new wish is created.
     val id: Long = 0L,
+    @ColumnInfo("wish-title")
     val title: String="",
+    @ColumnInfo("wish-desc")
     val description:String=""
 )
 
