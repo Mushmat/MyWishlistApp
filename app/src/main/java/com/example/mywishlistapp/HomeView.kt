@@ -34,9 +34,7 @@ fun HomeView(
 ){
     val context = LocalContext.current
     Scaffold(
-        topBar = {AppBarView(title = "WishList", {
-            Toast.makeText(context,"Button Clicked",Toast.LENGTH_LONG).show()
-        })},
+        topBar = {AppBarView(title = "WishList")},
         floatingActionButton = {
             FloatingActionButton(
                 modifier = Modifier.padding(all= 20.dp),
@@ -57,8 +55,9 @@ fun HomeView(
         {
         items(wishlist.value){
             wish-> WishItem(wish = wish) {
-
-        }
+                val id = wish.id
+                navController.navigate(Screen.AddScreen.route + "/$id") //Pass the id to the next screen
+            }
         }
         }
     }
